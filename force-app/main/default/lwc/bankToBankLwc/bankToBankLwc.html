@@ -1,0 +1,40 @@
+<template>
+  <!--  <lightning-card title="Wrapper Class LWC Datatable" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <template if:true={lstRecords}>
+                <lightning-datatable
+                    data={lstRecords}
+                    columns={columns}
+                    key-field="id"
+                    hide-checkbox-column
+                >
+                </lightning-datatable>
+            </template>
+            <template if:true={error}>
+                {error}
+            </template>
+        </div>
+    </lightning-card>  -->
+
+    <div style="height: 300px;">
+        <lightning-datatable
+                key-field="id"
+                data={lstRecords}
+                columns={columns}
+                onrowselection={getSelectedName}>
+        </lightning-datatable>
+    </div>
+    <br>
+    <div style="height: 1000px;">
+        <lightning-datatable
+                key-field="id"
+                data={lstRecords1}
+                columns={columns}
+                onrowselection={getSelectedName}>
+        </lightning-datatable>
+    </div>
+    <div class="slds-card">
+        <lightning-button name="send" label="sendData" onclick={callApexMethod}></lightning-button>
+    </div>
+    
+</template>
